@@ -1,10 +1,14 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg'
+
 const Navbar = () => {
     const NavItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/'>About</Link></li>
+        <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/signup'>SignUp</Link></li>
+
     </>
     return (
         <div className="navbar bg-base-100">
@@ -21,11 +25,11 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                {NavItems}
+                    {NavItems}
                 </ul>
             </div>
             <div className="navbar-end">
-            <button className="btn btn-outline btn-error">Appointment</button>
+                <button className="btn btn-outline btn-warning">Appointment</button>
             </div>
         </div>
     );

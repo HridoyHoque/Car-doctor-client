@@ -5,21 +5,21 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
 
     const handleLogin = (event) => {
         event.preventDefault()
         console.log('aitaseeee')
         const form = event.target;
-        const email  = form.email.value;
+        const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
         signIn(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error => console.log(error))
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error))
         form.reset()
     }
     return (
@@ -32,7 +32,7 @@ const Login = () => {
                 <div className="card flex-shrink-0 w-1/2 max-w-sm shadow-2xl bg-base-100 ml-12s">
                     <form onSubmit={handleLogin}>
                         <div className="card-body">
-                        <h1 className="text-5xl font-bold">Login</h1>
+                            <h1 className="text-5xl font-bold">Login</h1>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

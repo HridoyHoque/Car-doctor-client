@@ -4,6 +4,7 @@ import img from '../../assets/images/login/login.svg'
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { useLocation, useNavigate } from 'react-router-dom';
+import SocialLogin from '../../SocialLogin/SocialLogin';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -22,7 +23,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate(from, {replace: true});
+                navigate(from, { replace: true });
             })
             .catch(error => console.log(error))
         form.reset()
@@ -60,6 +61,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='text-center mb-5'>New to Car doctors? <Link to='/signup' className='text-orange-500 font-bold'>Sign Up</Link></p>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
